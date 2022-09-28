@@ -425,7 +425,8 @@ img {
 .footer-contacts:focus {
   color: var(--added-text-color);
 }
-.footer-title {
+.footer-title,
+.subscribe-title {
   display: block;
   color: var(--added-text-color);
   font-weight: 700;
@@ -457,6 +458,66 @@ img {
 .footer-social-link:focus {
   background-color: var(--logo-button-text-color);
 }
+
+/* Subscribe form */
+.footer-subscribe {
+  margin-left: 93px;
+}
+
+.subscribe-title {
+margin-bottom: 20px;
+}
+
+.subscribe-label {
+  display: block;
+}
+
+.subscribe-input {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+  width: 358px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  line-height: 1.25;
+  background-color: var(--background-color-added);
+  color: var(--text-color-footer);
+}
+
+.subscribe-btn {
+  position: relative;
+  margin-left: 12px;
+  width: 200px;
+  height: 50px;
+  background-color: var(--logo-button-text-color);
+  color: var(--added-text-color);
+  border-radius: 4px;
+  box-shadow: var(--shadow-form-button);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  text-align: center;
+  letter-spacing: 0.06em;
+  transition: backround-color 250ms var(--timing-function);
+}
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: var(--active-button-color);
+}
+
+.icon-send {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+ padding-left: 10px;
+  fill: var(--added-text-color);
+}
+
+
 /* Portfolio.html */
 /* Filtr buttons */
 .filtrs {
@@ -611,9 +672,14 @@ button.close-modal {
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--primary-background-color);
 }
+.icon-close:hover,
+.icon-close:focus {
+  fill: var(--background-color-hover);
+}
 
 .icon-close {
-  fill: var(--text-color);
+  fill: currentColor;
+  transition: fill 250ms var(--timing-function);
 }
 
 /* Form for order */
@@ -627,6 +693,7 @@ h4.form-title {
   text-align: center;
   color: var(--secondary-text-color);
 }
+
 .form-label {
   display: flex;
   flex-direction: column;
@@ -637,56 +704,99 @@ h4.form-title {
   line-height: 1.17;
   letter-spacing: 0.01em;
 }
+
 .form-label:not(:last-child) {
   margin-bottom: 10px;
 }
+
 .form-input,
 .feedback{
   border: var(--border-form-order);
   border-radius: 4px;
+  margin-top: 4px;
+  transition: border-color 250ms var(--timing-function);
 }
+
 .form-input {
-  position: relative;
-  height: 40px;
+  padding-left: 42px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
+
 .form-icon {
   position: absolute;
-  display: inline-block;
+  display: block;
   top: 50%;
-  left: 12px;
+  left: 12px; 
+  transition: fill 250ms var(--timing-function);
 }
+
+.form-input:focus-within + .form-icon {
+  fill: var(--background-color-hover);
+}
+.form-input:focus-within,
+.feedback:focus-within {
+  border-color: var(--background-color-hover);
+  outline: none;
+}
+
+
 .feedback {
   padding: 12px 16px;
   resize: none;
   height: 120px;
 }
+
 .feedback::placeholder{
 font-size: 12px;
 line-height: 1.17;
 letter-spacing: 0.01em;
 color: var(--text-color-placeholder);
 }
+
+/* Checkbox */
+
 .checkbox-label {
-  margin-left: 52px;
-  margin-right: 51px;
+  display: flex;
+  align-items: center;
+  margin: 20px 51px 30px 52px;
 }
-.checkbox{
-  line-height: 1.17;
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
+
+/* .checked {
+  opacity: 0;
+} */
+
 span.conditions {
  color: var(--logo-button-text-color);
  text-decoration: underline;
 }
-/* span.checkbox {
-  position: absolute;
-  left: 52px;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 15px;
-  background-color: tomato;
 
+.icon {
+  display: inline-block;
+  padding-right: 8.38px;
+}
+.checkbox:checked + .icon{
+fill:#2196f3;
+opacity: 1;
+}
+/* .checkbox:checked + .checked {
+  opacity: 1;
+}
+.checkbox:checked + .rectangle {
+  opacity: 0;
 } */
+
 .btn-submit {
   display: block;
   margin: auto;
@@ -701,5 +811,11 @@ span.conditions {
   line-height: 1.88;
   text-align: center;
   letter-spacing: 0.06em;
+  transition: backround-color 250ms var(--timing-function);
 }
-  
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background-color: var(--active-button-color);
+}
+
